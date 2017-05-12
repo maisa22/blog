@@ -15,6 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route:: get('ola', function(){
-	return '<h1>Olá Mundo!</h1>';
+Route::get('ola', function(){
+	return '<h1>Olá mundo!</h1>';
 });
+
+Route::get('posts','PostsController@index');
+Route::get('posts/create','PostsController@create');
+Route::post('posts','PostsController@store');
+Route::get('posts/{id}','PostsController@show');
+Route::get('posts/edit/{id}','PostsController@edit');
+Route::put('posts/{id}','PostsController@update');
+Route::delete('posts/{id}','PostsController@destroy');

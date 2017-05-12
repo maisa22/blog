@@ -6,7 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-   protected $filtable = [
-   'title',
-   'content'];
+	protected $fillable = [
+		'title',
+		'content'
+	];
+	public function comments(){
+		return $this->hasMany(Comment::class);
+	}
 }
